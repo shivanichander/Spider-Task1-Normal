@@ -25,7 +25,7 @@ vector<string> readPage(int pgno){
 		lines.push_back(linesin[k]);
 		k++;
 	}
-	
+	ifile.close();
 	return lines;
 }
 void LPS(string word, int M, int lps[]){
@@ -77,8 +77,7 @@ void StringSearch(string word, string line, int lineno, int pgno, int &flag)
             j++;
             
         }
- 
-        if ((j == M)&&(line[i]==' '||line[i]=='\n'))
+        if ((j == M)&&((line[i]==' '||line[i]=='\n')&&line[i - M - 1] ==' '))
         {
             cout<<"Page "<<pgno<<" Line "<<lineno<<endl;
             j = lps[j-1];
@@ -123,5 +122,7 @@ int main(){
 		if(flag==0)
 		cout<<"None"<<endl;
 		}
+		queries.close();
+		
 	return 0;
 }
