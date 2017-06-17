@@ -79,7 +79,7 @@ void StringSearch(string word, string line, int lineno, int pgno, int &flag)
         }
         if ((j == M)&&((line[i]==' '||line[i]=='\n')&&line[i - M - 1] ==' '))
         {
-            cout<<"Page "<<pgno<<" Line "<<lineno<<endl;
+            cout<<"Page "<<pgno<<", line "<<lineno<<endl;
             j = lps[j-1];
             flag=1;
         }
@@ -121,6 +121,8 @@ int main(){
 		}
 		if(flag==0)
 		cout<<"None"<<endl;
+		
+		cout<<endl;
 		}
 		queries.close();
 		
